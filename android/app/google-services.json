@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "311881731387",
+    "firebase_url": "https://ecommerce-admin-843ab.firebaseio.com",
+    "project_id": "ecommerce-admin-843ab",
+    "storage_bucket": "ecommerce-admin-843ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:311881731387:android:d037715c50004cd5aabb1e",
+        "android_client_info": {
+          "package_name": "com.cotech.ecommerce_admin_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "311881731387-4to0iimpkrg4mlvefbvv1rpt5aoekm8k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cotech.ecommerce_admin_app",
+            "certificate_hash": "d6a07223bed1cf1df93661db27a43bc794676ba5"
+          }
+        },
+        {
+          "client_id": "311881731387-0rfvgms2ntm0oe6ml5kgndqq198467v9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAY0bfw1kVC9_B0IoYDuBjfMu_ztfgkMz8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "311881731387-0rfvgms2ntm0oe6ml5kgndqq198467v9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
