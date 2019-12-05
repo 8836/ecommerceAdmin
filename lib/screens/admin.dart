@@ -1,3 +1,4 @@
+import 'package:ecommerce_admin_app/screens/add_product.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import '../db/category.dart';
@@ -20,8 +21,6 @@ class _AdminState extends State<Admin> {
   GlobalKey<FormState> _brandFormKey = GlobalKey();
   BrandService _brandService = BrandService();
   CategoryService _categoryService = CategoryService();
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +48,7 @@ class _AdminState extends State<Admin> {
                       icon: Icon(
                         Icons.sort,
                         color:
-                        _selectedPage == Page.manage ? active : notActive,
+                            _selectedPage == Page.manage ? active : notActive,
                       ),
                       label: Text('Manage'))),
             ],
@@ -192,7 +191,10 @@ class _AdminState extends State<Admin> {
             ListTile(
               leading: Icon(Icons.add),
               title: Text("Add product"),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => AddProduct()));
+              },
             ),
             Divider(),
             ListTile(
@@ -243,28 +245,29 @@ class _AdminState extends State<Admin> {
         key: _categoryFormKey,
         child: TextFormField(
           controller: categoryController,
-          validator: (value){
-            if(value.isEmpty){
+          validator: (value) {
+            if (value.isEmpty) {
               return 'category cannot be empty';
             }
           },
-          decoration: InputDecoration(
-              hintText: "add category"
-          ),
+          decoration: InputDecoration(hintText: "add category"),
         ),
       ),
       actions: <Widget>[
-        FlatButton(onPressed: (){
-          if(categoryController.text != null){
-            _categoryService.createCategory(categoryController.text);
-          }
-          Fluttertoast.showToast(msg: 'category created');
-          Navigator.pop(context);
-        }, child: Text('ADD')),
-        FlatButton(onPressed: (){
-          Navigator.pop(context);
-        }, child: Text('CANCEL')),
-
+        FlatButton(
+            onPressed: () {
+              if (categoryController.text != null) {
+                _categoryService.createCategory(categoryController.text);
+              }
+              Fluttertoast.showToast(msg: 'category created');
+              Navigator.pop(context);
+            },
+            child: Text('ADD')),
+        FlatButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text('CANCEL')),
       ],
     );
 
@@ -277,28 +280,29 @@ class _AdminState extends State<Admin> {
         key: _brandFormKey,
         child: TextFormField(
           controller: brandController,
-          validator: (value){
-            if(value.isEmpty){
+          validator: (value) {
+            if (value.isEmpty) {
               return 'brand cannot be empty';
             }
           },
-          decoration: InputDecoration(
-              hintText: "add brand"
-          ),
+          decoration: InputDecoration(hintText: "add brand"),
         ),
       ),
       actions: <Widget>[
-        FlatButton(onPressed: (){
-          if(brandController.text != null){
-            _brandService.createBrand(brandController.text);
-          }
-          Fluttertoast.showToast(msg: 'brand added');
-          Navigator.pop(context);
-        }, child: Text('ADD')),
-        FlatButton(onPressed: (){
-          Navigator.pop(context);
-        }, child: Text('CANCEL')),
-
+        FlatButton(
+            onPressed: () {
+              if (brandController.text != null) {
+                _brandService.createBrand(brandController.text);
+              }
+              Fluttertoast.showToast(msg: 'brand added');
+              Navigator.pop(context);
+            },
+            child: Text('ADD')),
+        FlatButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text('CANCEL')),
       ],
     );
 
